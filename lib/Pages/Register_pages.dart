@@ -18,7 +18,11 @@ class _RegisterPagesState extends State<RegisterPages> {
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         leading: IconButton(
-          icon: Icon(Icons.arrow_left, color: Colors.black),
+          icon: Icon(
+            Icons.arrow_left_sharp,
+            color: Colors.blue,
+            size: 40,
+          ),
           onPressed: () => Navigator.of(context).pop(),
         ),
         centerTitle: true,
@@ -35,28 +39,55 @@ class _RegisterPagesState extends State<RegisterPages> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Daftar",
-                  style: registerTitleStyle,
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: Text(
+                    "Daftar",
+                    style: registerTitleStyle,
+                  ),
                 ),
                 Container(
-                  width: 300,
+                  alignment: Alignment.topLeft,
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
-                      "Setiap program menghubungkan data pengguna di program tersebut.",
+                      "Setiap Program Menghubungkan Data Pengguna Di Program Tersebut.",
                       style: registersubheadingStyle),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
-                InputTextRegister(hintText: "Nama..."),
-                InputTextRegister(hintText: "Profesi..."),
-                InputTextRegister(hintText: "Username..."),
-                InputTextRegister(makePassword: true, hintText: "Password..."),
+                Container(
+                    alignment: Alignment.topLeft,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: InputTextRegister(
+                      hintText: "Nama...",
+                    )),
+                Container(
+                    alignment: Alignment.topLeft,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: InputTextRegister(hintText: "Profesi...")),
+                Container(
+                    alignment: Alignment.topLeft,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: InputTextRegister(hintText: "Username...")),
+                Container(
+                    alignment: Alignment.topLeft,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: InputTextRegister(
+                        makePassword: true, hintText: "Password...")),
                 SizedBox(
                   height: 40,
                 ),
                 Container(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                   width: MediaQuery.of(context).size.width,
+                  height: 50,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(primary: Color(0xff2498DB)),
                     onPressed: () {
